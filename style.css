@@ -1,0 +1,83 @@
+:root{
+  --blue-:#0070bf;
+}
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: aliceblue;
+}
+
+header{
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input{
+  border-radius: 5px;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-bar{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.cal-con{
+  padding: 0;
+  margin: 0;
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+button{
+  color: none;
+  outline:none;
+  border:none;
+}
+
+.btn {
+  background-color: var(--blue-);
+  color: aliceblue;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+
+
+#tasks{
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  height: 2rem;
+  width: 30rem;
+  border-radius: 10px;
+  border: transparent;
+  margin: 1rem;
+  font-size: medium;
+
+}
+
+.input-bar[type="text"]:focus {
+  outline: none; 
+}

@@ -1,33 +1,37 @@
 import './style.css'
 
+// Initialize an array to store todo objects
+const todoList = [];
 
-let todoList= [];
+// Function to add a new todo item
+function addTodo() {
+  const taskInput = document.getElementById('tasks');
+  const taskText = taskInput.value.trim();
 
-let taskInput=document.getElementById("tasks");
-let addTaskBtn=document.getElementById("addTask")
-let taskList=document.getElementById("task-list")
+  if (taskText !== '') {
+    // Create a new todo object
+    const todoItem = {
+      text: taskText,
+      completed: false
+    };
 
-addTaskBtn.addEventListener("click",()=> {
-    let task=taskInput.Value.trim();
+    // Add the todo object to the array
+    todoList.push(todoItem);
 
-    if (task !== ""){
-        let todoItem={
-            text: task
-        }
-        
-    todoList.push(todoItem)
+    // Add the todo item to the UI
+    const taskList = document.getElementById('task-list');
+    const newTodoItem = document.createElement('li');
+    newTodoItem.textContent = taskText;
 
-    let taskradio = document.createElement('input');
-    taskradio.type = 'radio';
-    taskradio.name = 'todo';
-    taskradio.value = 'task';
+    taskList.appendChild(newTodoItem);
 
-    const taskLabel = document.createElement('label');
-    taskLabel.textContent = task;
-
-    taskList.appendChild(taskradio);
-    taskList.appendChild(taskLabel);
-
+    // Clear the input field
     taskInput.value = '';
+  }
 }
-});
+
+// Event listener for the "ADD" button
+const addTaskButton = document.getElementById('addTask');
+addTaskButton.addEventListener('click', addTodo);
+
+

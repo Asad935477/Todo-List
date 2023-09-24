@@ -1,4 +1,4 @@
-import './style.css'
+import 'style.css'
 
 // Initialize an array to store todo objects
 const todoList = [];

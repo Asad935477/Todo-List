@@ -1,7 +1,27 @@
 import './style.css'
 
-// Initialize an array to store todo objects
-const todoList = [];
+// Function to create a new todo item
+function createTodoItem(text) {
+  // Create a new todo item element
+  const todoItem = document.createElement('li');
+  todoItem.textContent = text;
+
+  // Create a "delete" button (x)
+  const deleteButton = document.createElement('span');
+  deleteButton.textContent = 'x';
+  deleteButton.classList.add('delete-todo');
+
+  // Add a click event listener to the "delete" button
+  deleteButton.addEventListener('click', () => {
+    // Remove the clicked todo item from the UI
+    todoItem.parentNode.removeChild(todoItem);
+  });
+
+  // Append the "delete" button to the todo item
+  todoItem.appendChild(deleteButton);
+
+  return todoItem;
+}
 
 // Function to add a new todo item
 function addTodo() {
@@ -9,21 +29,12 @@ function addTodo() {
   const taskText = taskInput.value.trim();
 
   if (taskText !== '') {
-    // Create a new todo object
-    const todoItem = {
-      text: taskText,
-      completed: false
-    };
-
-    // Add the todo object to the array
-    todoList.push(todoItem);
+    // Create a new todo item
+    const todoItem = createTodoItem(taskText);
 
     // Add the todo item to the UI
     const taskList = document.getElementById('task-list');
-    const newTodoItem = document.createElement('li');
-    newTodoItem.textContent = taskText;
-
-    taskList.appendChild(newTodoItem);
+    taskList.appendChild(todoItem);
 
     // Clear the input field
     taskInput.value = '';
@@ -33,5 +44,3 @@ function addTodo() {
 // Event listener for the "ADD" button
 const addTaskButton = document.getElementById('addTask');
 addTaskButton.addEventListener('click', addTodo);
-
-

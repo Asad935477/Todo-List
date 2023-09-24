@@ -8,7 +8,7 @@ let addTaskBtn=document.getElementById("addTask")
 let taskList=document.getElementById("task-list")
 
 addTaskBtn.addEventListener("click",()=> {
-    let task=tasksInput.Value.trim();
+    let task=taskInput.Value.trim();
 
     if (task !== ""){
         let todoItem={

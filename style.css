@@ -12,11 +12,20 @@ html body{
   height: 100%;
   width: 100%;
   font-family: 'Open Sans', sans-serif;
-  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.container{
+  background-color: #c7daeb;
+  border-radius: 10px;
+  max-width: fit-content;
+  margin: 2rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
 header{
-  margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,13 +78,46 @@ button{
 #tasks{
   background-color: white;
   color: black;
-  font-weight: bold;
+  font-weight: 400;
   height: 5rem;
   width: 45rem;
   border-radius: 10px;
   border: transparent;
   margin: 1rem;
-  font-size: medium
-
+  font-size: x-large;
+  margin-left: 2rem;
 }
 
+input{
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+ul li{
+  margin:1rem 0rem 0rem 2rem;
+  width: auto;
+  border-radius: 5px;
+  color:rgb(44, 44, 44);
+  font-size: xx-large;
+  font-weight: 550;
+  padding:10px 25px;
+  position: relative;
+  list-style: none;
+}
+
+ul li.done{
+  text-decoration: line-through;
+}
+
+ul li.done::before{
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image:url(/public/check2.svg);
+  background-size: cover;
+  top: 21px;
+  left: -32px;
+}
